@@ -11,7 +11,7 @@ from PIL import Image
 import random
 import json, cv2, time
    
-class MyDatasetTransform(Dataset):
+class MyDataset(Dataset):
     def __init__(self, img_list_path, transform, scale=1):
         self.img_list_path = img_list_path
         self.scale = scale
@@ -111,7 +111,7 @@ class MyDatasetTransform(Dataset):
             mask_torch = torch.from_numpy(mask).type(torch.FloatTensor)
             # print("mask_torch==1")
         else:
-            mask_torch = torch.zeros(img_torch.shape[0], img_torch.shape[1]).type(torch.FloatTensor).unsqueeze(dim=0)
+            mask_torch = torch.zeros(img_torch.shape[1], img_torch.shape[2]).type(torch.FloatTensor).unsqueeze(dim=0)
 
         return {
             'image': img_torch,
