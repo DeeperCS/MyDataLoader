@@ -63,7 +63,12 @@ torch.Size([5, 3, 160, 160])
 ```
 
 
-
+Test env:
+```
+torch.__version__: '1.7.0+cu101'
+torchvision.__version__: '0.8.1+cu101'
+PIL.__version__:'5.3.0'
+```
 
 [Reference]
 
